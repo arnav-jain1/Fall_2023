@@ -83,7 +83,7 @@ void demorganFirst(bool x, bool y) {
      *Function: printing a truth table De Morgan's first law
     */
     //Prints the value of x, y then outcome of not(x and y) then outcome of (not x) or (not y). All of which is seperated by tabs
-    std::cout << x << "\t" << y << "\t" << !(x&&y) << "\t" << (!x||!y) << std::endl; }
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << !(x&&y) << "\t" << (!x||!y) << std::endl; }
 void demorganSecond(bool x, bool y) {
     /*Prolouge
      *Inputs: 2 bools: x,y
@@ -91,7 +91,7 @@ void demorganSecond(bool x, bool y) {
      *Function: printing a truth table De Morgan's second law
     */
     // Prints value of x, y, then outcome of not(x or y) then outcome of (not x) and (not y). All seperated by tabs
-    std::cout << x << "\t" << y << "\t" << !(x||y) << "\t" << (!x&&!y) << std::endl;}
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << !(x||y) << "\t" << (!x&&!y) << std::endl;}
 void associative1(bool x, bool y, bool z) {
     /*Prolouge
      *Inputs: 3 bools: x,y,z
@@ -99,7 +99,7 @@ void associative1(bool x, bool y, bool z) {
      *Function: printing a truth table for associate property with ands
     */
     // Prints value of x,y,z then outcome of ((x and y) and z) then outcome of (x and (y and z))
-    std::cout << x << "\t" << y << "\t" << z << "\t" << ((x&&y)&&z) << "\t" << (x&&(y&&z)) << std::endl; }
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << z << "\t" << ((x&&y)&&z) << "\t" << (x&&(y&&z)) << std::endl; }
 void associative2(bool x, bool y, bool z) {
     /*Prolouge
      *Inputs: 3 bools: x,y,z
@@ -107,7 +107,7 @@ void associative2(bool x, bool y, bool z) {
      *Function: printing a truth table for associate property with ors
     */
     // Prints value of x,y,z then outcome of ((x or y) or z) then outcome of (x or (y or z))
-    std::cout << x << "\t" << y << "\t" << z << "\t" << ((x||y)||z) << "\t" << (x||(y||z)) << std::endl; }
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << z << "\t" << ((x||y)||z) << "\t" << (x||(y||z)) << std::endl; }
 void q5(bool x, bool y, bool z){
     /*Prolouge
      *Inputs: 3 bools: x,y,z
@@ -115,7 +115,7 @@ void q5(bool x, bool y, bool z){
      *Function: printing a truth table for the function listed in q5
     */
     // Prints x, y, z, then [(p+q)*(p->r)*(q->r)]->r and lastly prints true because the logic will always be true. In order to do all implications, it passes to implication func
-    std::cout << x << "\t" << y << "\t" << z << "\t" << implication(((x||y)&&(implication(x, z))&&(implication(y, z))), z) << "\t" << true << std::endl;}
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << z << "\t" << implication(((x||y)&&(implication(x, z))&&(implication(y, z))), z) << "\t" << true << std::endl;}
 void q6(bool x, bool y) {
     /*Prolouge
      *Inputs: 2 bools: x,y
@@ -124,7 +124,7 @@ void q6(bool x, bool y) {
     */
     // Prints x, y then p<->q then (p->q)*(p->q) all seperated by tabs. In order to do implications it passes it to the function and to do
     //biconditional, == is used because biconditional is when both vars are the same
-    std::cout << x << "\t" << y << "\t" << (x == y) << "\t" << ((implication(x,y))&&(implication(y,x)))<< std::endl;}
+    std::cout << std::boolalpha << x << "\t" << y << "\t" << (x == y) << "\t" << ((implication(x,y))&&(implication(y,x)))<< std::endl;}
 
 bool implication(bool x , bool y) {
     /*Prolouge
