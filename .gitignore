@@ -1,4 +1,6 @@
 /Coms_130
-/cpp_practice
 /210/submissions
 *.exe
+*.tar.gz
+*.zip
+/.vscode

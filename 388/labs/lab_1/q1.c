@@ -5,7 +5,7 @@ int main() {
     int input1; 
     int input2;
     char operand;
-    printf("Enter an integer, an operand, and then another integer \n");
+    printf("Enter an integer, an operand, and then another integer like this: 1+3 \n");
     scanf("%d %c %d", &input1, &operand, &input2);
     
     //Switch statement to determine which operation to perform

@@ -7,7 +7,7 @@ int main() {
     float input1; 
     float input2;
     char operand[10];
-    printf("Enter 2 numbers \n");
+    printf("Enter 2 numbers seperated by a space\n");
     scanf("%f %f", &input1, &input2);
     fflush(stdin);
     printf("Enter an operand (type sqrt for square root, ciel for cieling, flr for floor, exp for exponent, and (a+b)^2 for (a+b)^2)\n");
