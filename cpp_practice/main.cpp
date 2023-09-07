@@ -7,6 +7,7 @@ int main() {
     acc2.deposit(200);
     std::cout << acc->getBalance() << std::endl;
     std::cout << acc2.getBalance() << std::endl;
+    std::cout << std::endl;
     delete acc;
     // delete acc2;
     return 0;
