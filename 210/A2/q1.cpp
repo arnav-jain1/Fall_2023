@@ -6,7 +6,7 @@ q1::q1()
 {
     //No arg constructor
     //Constructor that creates the object and initializes the domain var
-    const double* domain = new const double[10]{1,2,4,5,6,7,8,9,10}; //Domain of the function
+    domain = new const double[10]{1,2,4,5,6,7,8,9,10}; //Domain of the function
 }
 
 q1::~q1()
