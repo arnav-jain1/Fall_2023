@@ -49,8 +49,8 @@ def q2():
     """
 
     # Defining two sets 
-    s = {(1, 1), (1, 4), (2, 3), (3, 1), (3, 4)}
-    r = {(1, 0), (2, 0), (3, 1), (3, 2), (4, 1)}
+    r = {(1, 1), (1, 4), (2, 3), (3, 1), (3, 4)}
+    s = {(1, 0), (2, 0), (3, 1), (3, 2), (4, 1)}
 
 
     #Prints the composite of s and r by calling the composite function
