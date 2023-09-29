@@ -5,5 +5,5 @@
 *.zip
 .vscode/
 *.docx
-clipboard.py
+
 rand/
