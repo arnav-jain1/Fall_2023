@@ -55,7 +55,8 @@ void disable_interrupt()
     // YOUR CODE HERE
     /* Look at the enable_timer_interrupt() function for hints about
        how to write this function */
-    write_csr(mstatus, read_csr(mstatus) | (0 << MSTATUS_MIE_BIT)); //Sets the interrupt bit to 0 in mstatus register
+    write_csr(mstatus, read_csr(mstatus) & !(0 << MSTATUS_MIE_BIT)); //Sets the interrupt bit to 0 in mstatus register; Does this by shifting 0 and then notting the whole thing
+    //After notting it (011...) it then &s it so that every bit that is already 1 stays 1 except for the mstatus bit
 
 }
 
