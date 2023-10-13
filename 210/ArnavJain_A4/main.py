@@ -210,7 +210,7 @@ def transitive_closure(relation, SET):
         columns = [i for i in range(len(SET))if matrix[i][index] == 1 ] # In column index, finds all the rows that have a 1
         rows = [i for i in range(len(SET)) if matrix[index][i] == 1] # In row index, finds all the columns that have a 1
         # Essentially, in row x col x, finds where there is a 1, and adds it to a list
-
+        
 
         crossprod = []
         for elem in columns:
