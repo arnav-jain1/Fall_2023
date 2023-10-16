@@ -1,0 +1,29 @@
+C recursive compile time: 
+
+real    0m0.153s
+user    0m0.097s
+sys     0m0.052s
+
+C recursive run time:
+
+real    0m0.016s
+user    0m0.004s
+sys     0m0.018s
+
+C iterative compile time:
+
+real	0m0.154s
+user	0m0.101s
+sys	    0m0.052s
+
+C iterative run time:
+
+real    0m0.009s
+user    0m0.005s
+sys     0m0.008s
+
+Python run time:
+
+real    0m0.060s
+user    0m0.040s
+sys     0m0.027s
