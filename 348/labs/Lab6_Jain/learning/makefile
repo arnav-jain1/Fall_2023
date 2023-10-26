@@ -4,7 +4,7 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -std=c++11 -fsanitize=address -fno-omit-frame-pointer 
 
 # Target executable name
 TARGET = main
