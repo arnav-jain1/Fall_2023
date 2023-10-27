@@ -1,0 +1,198 @@
+Question 1:
+A = {'a', 'd', 'c', 'b'} B = {'v', 'z', 'w', 'x', 'y'} f = {('a', 'z'), ('b', 'y'), ('d', 'w'), ('c', 'x')}
+Is a function
+Is injective
+Not surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {'z', 'x', 'y'} f = {('a', 'z'), ('b', 'y'), ('c', 'x'), ('d', 'z')}
+Is a function
+Not injective
+Is surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {'w', 'z', 'x', 'y'} f = {('a', 'z'), ('b', 'y'), ('d', 'w'), ('c', 'x')}
+Is a function
+Is injective
+Is surjective
+Is bijective Inverse of f is {('x', 'c'), ('w', 'd'), ('z', 'a'), ('y', 'b')}
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {1, 2, 3, 4, 5} f = {('c', 1), ('a', 4), ('b', 5), ('d', 3)}
+Is a function
+Is injective
+Not surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'c', 'b'} B = {1, 2, 3, 4} f = {('a', 3), ('b', 4), ('c', 1)}
+Is a function
+Is injective
+Not surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {1, 2, 3} f = {('c', 3), ('b', 1), ('d', 2), ('a', 2)}
+Is a function
+Not injective
+Is surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {1, 2, 3, 4} f = {('a', 4), ('c', 3), ('b', 1), ('d', 2)}
+Is a function
+Is injective
+Is surjective
+Is bijective Inverse of f is {(1, 'b'), (2, 'd'), (3, 'c'), (4, 'a')}
+-------------------------------------
+A = {'a', 'd', 'c', 'b'} B = {1, 2, 3, 4} f = {('a', 2), ('c', 2), ('b', 1), ('d', 3)}
+Is a function
+Not injective
+Not surjective
+Not bijective therefore no inverse
+-------------------------------------
+A = {'a', 'c', 'b'} B = {1, 2, 3, 4} f = {('a', 4), ('c', 3), ('b', 1), ('a', 2)}
+Not a function therefore not injective, surjective or bijective
+
+
+Question 2:
+Steps for gcd(414,662)
+662/414 = 1 R 248
+414/248 = 1 R 166
+248/166 = 1 R 82
+166/82 = 2 R 2
+82/2 = 41 R 0
+GCD(414, 662) = 2
+
+
+Steps for gcd(6,14)
+14/6 = 2 R 2
+6/2 = 3 R 0
+GCD(6, 14) = 2
+
+
+Steps for gcd(24,36)
+36/24 = 1 R 12
+24/12 = 2 R 0
+GCD(24, 36) = 12
+
+
+Steps for gcd(12,42)
+42/12 = 3 R 6
+12/6 = 2 R 0
+GCD(12, 42) = 6
+
+
+Steps for gcd(252,198)
+252/198 = 1 R 54
+198/54 = 3 R 36
+54/36 = 1 R 18
+36/18 = 2 R 0
+GCD(252, 198) = 18
+
+
+
+Question 3:
+3a: 
+Product Sum format: 
+662 = 414*1 + 248
+414 = 248*1 + 166
+248 = 166*1 + 82
+166 = 82*2 + 2
+82 = 2*41 + 0
+
+Euclid backwards format: 
+2 = 1 * 166 - 2 * 82
+2 = 1 * 166 - 2 * (248-1*166)
+2 = 3 * 166 - 2 * 248
+2 = 3 * (414-1*248) - 2 * 248
+2 = 3 * 414 - 5 * 248
+2 = 3 * 414 - 5 * (662-1*414)
+2 = 8 * 414 - 5 * 662
+GCD(662, 414) = 8 * 414 - 5 * 662
+
+
+3b: 
+Product Sum format: 
+14 = 6*2 + 2
+6 = 2*3 + 0
+
+Euclid backwards format: 
+2 = 1 * 14 - 2 * 6
+GCD(14, 6) = 1 * 14 - 2 * 6
+
+
+3c: 
+Product Sum format: 
+36 = 24*1 + 12
+24 = 12*2 + 0
+
+Euclid backwards format: 
+12 = 1 * 36 - 1 * 24
+GCD(36, 24) = 1 * 36 - 1 * 24
+
+
+3d: 
+Product Sum format: 
+42 = 12*3 + 6
+12 = 6*2 + 0
+
+Euclid backwards format: 
+6 = 1 * 42 - 3 * 12
+GCD(42, 12) = 1 * 42 - 3 * 12
+
+
+3e: 
+Product Sum format: 
+252 = 198*1 + 54
+198 = 54*3 + 36
+54 = 36*1 + 18
+36 = 18*2 + 0
+
+Euclid backwards format: 
+18 = 1 * 54 - 1 * 36
+18 = 1 * 54 - 1 * (198-3*54)
+18 = 4 * 54 - 1 * 198
+18 = 4 * (252-1*198) - 1 * 198
+18 = 4 * 252 - 5 * 198
+GCD(252, 198) = 4 * 252 - 5 * 198
+
+
+
+Question 4:
+4a: 
+q1 = 1		q2 = 1		q3 = 1		q4 = 2		q5 = 41		
+s0 = 1		s1 = 0		s2 = s0 - s1*q1 = 1 - 0*1 = 1		s3 = s1 - s2*q2 = 0 - 1*1 = -1		s4 = s2 - s3*q3 = 1 - -1*1 = 2		s5 = s3 - s4*q4 = -1 - 2*2 = -5		
+t0 = 0		t1 = 1		t2 = t0 - t1*q1 = 0 - 1*1 = -1		t3 = t1 - t2*q2 = 1 - -1*1 = 2		t4 = t2 - t3*q3 = -1 - 2*1 = -3		t5 = t3 - t4*q4 = 2 - -3*2 = 8		
+2 = -5*662 + 8*414
+GCD(662, 414) = -5*662 + 8*414
+
+
+4b: 
+q1 = 2		q2 = 3		
+s0 = 1		s1 = 0		s2 = s0 - s1*q1 = 1 - 0*2 = 1		
+t0 = 0		t1 = 1		t2 = t0 - t1*q1 = 0 - 1*2 = -2		
+2 = 1*14 + -2*6
+GCD(14, 6) = 1*14 + -2*6
+
+
+4c: 
+q1 = 1		q2 = 2		
+s0 = 1		s1 = 0		s2 = s0 - s1*q1 = 1 - 0*1 = 1		
+t0 = 0		t1 = 1		t2 = t0 - t1*q1 = 0 - 1*1 = -1		
+12 = 1*36 + -1*24
+GCD(36, 24) = 1*36 + -1*24
+
+
+4d: 
+q1 = 3		q2 = 2		
+s0 = 1		s1 = 0		s2 = s0 - s1*q1 = 1 - 0*3 = 1		
+t0 = 0		t1 = 1		t2 = t0 - t1*q1 = 0 - 1*3 = -3		
+6 = 1*42 + -3*12
+GCD(42, 12) = 1*42 + -3*12
+
+
+4e: 
+q1 = 1		q2 = 3		q3 = 1		q4 = 2		
+s0 = 1		s1 = 0		s2 = s0 - s1*q1 = 1 - 0*1 = 1		s3 = s1 - s2*q2 = 0 - 1*3 = -3		s4 = s2 - s3*q3 = 1 - -3*1 = 4		
+t0 = 0		t1 = 1		t2 = t0 - t1*q1 = 0 - 1*1 = -1		t3 = t1 - t2*q2 = 1 - -1*3 = 4		t4 = t2 - t3*q3 = -1 - 4*1 = -5		
+18 = 4*252 + -5*198
+GCD(252, 198) = 4*252 + -5*198
+
+

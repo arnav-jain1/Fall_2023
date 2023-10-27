@@ -1,4 +1,13 @@
-
+'''
+Author: Arnav Jain
+Program Name: EECS 210 Assignment 5
+Function: Determines if a function is injective, surjective, bijective, finds the inverse of a function, finds the gcd of two numbers, finds the linear combination of two numbers that equals their gcd (2 ways)
+Inputs: None
+Outputs: Prints whether a function is injective, surjective, bijective, the inverse of a function, the gcd of two numbers, the linear combination of two numbers that equals their gcd (2 ways)
+Collaborators: Aniketh for q3
+Other sources: Stack Overflow
+Creation Date: 10/26/2023
+'''
 def is_func(A, B, f):
     '''
     Inputs: A, B, f (A and B are sets, f is a list of tuples)
@@ -88,7 +97,11 @@ def inv(A, B, f):
 
 
 def q1():
-    
+    '''
+    Inputs: None
+    Output: None
+    Function: Tests if the functions given in the problem are injective, surjective and bijective 
+    '''
     #List of test inputs (they are also numbered)
     test_inputs = [
         ({"a","b","c","d"}, {"v","w","x","y","z"}, {("a","z"),("b","y"),("c","x"),("d","w")}),  #0
@@ -133,55 +146,85 @@ def q1():
             print(f"Inverse of f is {inv(a,s,d)}")
         else:
             print("Not bijective therefore no inverse")
+        print("-------------------------------------")
 
 def gcd(num1, num2):
+    """
+    Inputs: num1, num2 (integers)
+    Output: steps (list of strings), final_gcd (integer)
+    Function: Finds the gcd of num1 and num2 and saves the steps 
+    """
+
+    #Initialize the steps list and the final_gcd (1 is the default gcd)
     steps = []
     final_gcd = 1
+
+    #Make sure num1 is greater than num2, if not then swap them
     if num2 > num1:
         num1, num2 = num2, num1
     
+    #Recursive function to find the gcd (I like recursion)
     def recursive(num1, num2):
+        '''
+        Inputs: num1, num2 (integers)
+        Output: Returns itself but eventually the gcd
+        Function: Finds the gcd of num1 and num2 and saves the steps
+        '''
+        #Make sure num2 is not 0, if it is then return num1 (basecase), also make sure final_gcd is nonlocal
         nonlocal final_gcd
         if num2 == 0:
             return num1
 
+        #Add the step to the steps list in the form of num1 = num2*quotient + remainder
         steps.append(f"{num1}/{num2} = {num1//num2} R {num1%num2}")
+        #Set final_gcd to num2
         final_gcd = num2
-
+        
+        #Return the function with num2 as num1 and remainder as num2
         return recursive(num2, num1%num2)
     
+    #Call the recursive function and return the steps and final_gcd
     recursive(num1, num2)
     return steps, final_gcd
 
 def q2():
+    '''
+    Inputs: None
+    Output: None
+    Function: Tests the gcd function with the test inputs given in the problem
+    '''
+    #List of test inputs
     pairs = [(414, 662), (6, 14), (24, 36), (12, 42), (252, 198)]
 
+    #Loop through each test input
     for a,b in pairs:
+        #Print the test input
         print(f"Steps for gcd({a},{b})")
         result = gcd(a,b)
+        #Get the result from the gcd function and print each step
         for step in result[0]:
             print(step)
+        #Print the final gcd and a new line
         print(f"GCD{(a, b)} = {result[1]}")
         print()
-
-
-# q2()
-
-
-result = gcd(252, 198)
-
-steps = result[0]
+        print()
 
 def bezout_steps(a, b):
     '''
     Inputs: a, b (integers)
     Output: s, t (integers)
     Function: Finds the linear combination of a and b that equals their gcd and prints the steps
+    Got help from Aniketh Aatipamula for this question. He guided me through how he did it and I implemented it in my own way
     '''
 
+
     #Make sure a is greater than b, if not then swap them
+    #Also save the original a and b
+    original_a, original_b = a, b
     if a < b:
         a, b = b, a
+        original_a, original_b = original_b, original_a
+
     
     #Initialize the steps list as well as r
     r = 0
@@ -252,14 +295,18 @@ def bezout_steps(a, b):
 
     #Print the final step in the form of the equation gcd = s*a - q*b
     print(f"{gcd} = {s} * {final_a} - {final_q} * {final_b}")
-
+    print(f"GCD({original_a}, {original_b}) = {s} * {final_a} - {final_q} * {final_b}")
     #Return s and -q since the equation is gcd = s*a - q*b and we have been typing out the - sign
     return s, -final_q
 
 def q3():
-
+    '''
+    Inputs: None
+    Output: None
+    Function: Tests the bezout_steps function with the test inputs given in the problem
+    '''
     #List of test inputs
-    pairs = (414, 662), (6, 14),  (24, 36), (12, 42), (252, 198)
+    pairs = [(414, 662), (6, 14),  (24, 36), (12, 42), (252, 198)]
     letter = ["a", "b", "c", "d", "e"]
     #Loop through each test input
     for i, pair in enumerate(pairs):
@@ -267,15 +314,101 @@ def q3():
         bezout_steps(pair[0], pair[1])
         print("\n")
 
+def bezout_method_2(a, b):
+    '''
+    Inputs: a, b (integers)
+    Output: None
+    Function: Finds the linear combination of a and b that equals their gcd and prints the steps
+    '''
+    #Initialize s0, s1, t0, t1 to their respective values
+    
+    s0 = 1
+    s1 = 0
+    t0 = 0
+    t1 = 1
+
+    #Initialize s and t and append s0 and s1 to s and t0 and t1 to t, also start q as an empty list
+    s = [s0, s1]
+    t = [t0, t1]
+    q = []
+
+    #Swap a and b if a is less than b
+    if a < b:
+        a, b = b, a
+
+    #Save the original a and b
+    original_a = a
+    original_b = b
+    
+    #Loop until b is 0
+    while b > 0:
+        #Get the quotient and remainder of a and b, append the quotient to q
+        q.append(a//b)
+        r = a%b
+        
+        #Set a to b and b to r
+        a, b = b, r
+        #Append s and t to their respective lists using the equation s = s0 - q*s1 and t = t0 - q*t1
+        #Assume s0/t0 is the second last s/t and s1/t1 is the last s/t. q is the last quotient
+        s.append(s[-2] - q[-1]*s[-1])
+        t.append(t[-2] - q[-1]*t[-1])
+    
+    #Remove the last element of s and t as they are extra according to the algorithm
+    s.pop()
+    t.pop()
+
+    #Print the steps with the proper formatting as listed in the problem
+    for index in range(len(q)):
+        print(f"q{index+1} = {q[index]}", end = "\t\t")
+    print()
+    print(f"s0 = {s[0]}\t\ts1 = {s[1]}", end='\t\t')
+    for index in range(2, len(s)):
+        print(f"s{index} = s{index-2} - s{index-1}*q{index-1} = {s[index-2]} - {s[index-1]}*{q[index-2]} = {s[index]}", end = "\t\t")
+    print()
+    print(f"t0 = {t[0]}\t\tt1 = {t[1]}", end='\t\t')
+    for index in range(2, len(t)):
+        print(f"t{index} = t{index-2} - t{index-1}*q{index-1} = {t[index-2]} - {t[index-1]}*{q[index-2]} = {t[index]}", end = "\t\t")
+    print()
+
+    print(f"{s[-1]*original_a + t[-1]*original_b} = {s[-1]}*{original_a} + {t[-1]}*{original_b}")
+    print(f"GCD({original_a}, {original_b}) = {s[-1]}*{original_a} + {t[-1]}*{original_b}")
+
+
+def q4():
+    '''
+    Inputs: None
+    Output: None
+    Function: Tests the bezout_method_2 function with the test inputs given in the problem
+    '''
+
+    #List of test inputs with the letters
+    pairs = [(414, 662), (6, 14),  (24, 36), (12, 42), (252, 198)]
+    letter = ["a", "b", "c", "d", "e"]
+    #Loop through each test input
+    for i, pair in enumerate(pairs):
+        print(f'4{letter[i]}: ')
+        #Call the bezout_method_2 function and print a new line
+        bezout_method_2(pair[0], pair[1])
+        print("\n")
+
 
 def main():
+    '''
+    Inputs: None
+    Output: None
+    Function: Calls the functions for each question
+    '''
+
+    #Call each function with a new line in between
     print("Question 1:")
     q1()
-    
+    print()
     print("\nQuestion 2:")
     q2()
     print("\nQuestion 3:")
     q3()
+    print("\nQuestion 4:")
+    q4()
 
-
+#Call the main function
 main()
