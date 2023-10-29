@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> 
+            .resize-image {
+                width: 300px;
+            }
+        </style>
+        
+        <style>
+            .paragraph-container {
+                max-width: 800px;
+                margin-right: auto;
+            }
+
+            #paragraph {
+                border: 2px solid white;  /* Initial border style */
+            }
+        </style>
+        
+        <title>EECS 348 Lab 7 Practice 2</title>
+    </head>    
+<body>
+
+<h1>EECS 348 Lab 7 Practice 2</h1>
+<div class = "paragraph-container">
+<p id = "paragraph">
+    The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+</p>
+</div>
+<label>Border R(0-255): <input type="number" id="border-red"  max="255" min="0"></label><br>
+<label>Border G(0-255): <input type="number" id="border-green"  max="255" min="0"></label><br>
+<label>Border B(0-255): <input type="number" id="border-blue"   max="255" min="0"></label><br>
+<label>Border Width: <input type="number" id="border-width"  min="0"></label><br>
+
+<label>Background R(0-255): <input type="number" id="background-red"  max="255" min="0"></label><br>
+<label>Background G(0-255): <input type="number" id="background-green"  max="255" min="0"></label><br>
+<label>Background B(0-255): <input type="number" id="background-blue"  max="255" min="0"></label><br>
+
+<button onclick="changeColor()">Change the color. </button>
+
+
+<script src="functions.js"></script>
+</body>
+</html> 
+
+
+
