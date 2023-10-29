@@ -1,19 +1,3 @@
-
-var picture_index = 0;
-
-function prev() {
-    picture_index = ((picture_index + 5) - 1) % 5
-    var picture_uri = `pictures/${picture_index}.jpeg`
-    document.getElementById("picture").src = picture_uri
-}
-
-function next() {
-    picture_index = (picture_index + 1) % 5
-    var picture_uri = `pictures/${picture_index}.jpeg`
-    document.getElementById("picture").src = picture_uri
-}
-
-
 function changeColor() {
     var borderRed = document.getElementById('border-red').value || 0;
     var borderGreen = document.getElementById('border-green').value || 0;
