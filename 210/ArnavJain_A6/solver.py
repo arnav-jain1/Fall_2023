@@ -46,6 +46,7 @@ class Board:
 
     def search_empty(self):
         #Searches for an empty square and returns the coordinates of the first empty square it finds
+
         for row in range(self.size):
             for col in range(self.size):
                 #Goes through each square and checks if it is empty
