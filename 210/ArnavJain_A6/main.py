@@ -1,9 +1,24 @@
+'''
+Author: Arnav Jain
+Program Name: EECS 210 Assignment 6
+Function: Sudoku Solver
+Inputs: A text file with a sudoku puzzle (5 total)
+Outputs: Solved sudoku puzzle (if possible)
+Collaborators: None
+Other sources: Stack Overflow
+Creation Date: 11/09/2023
+'''
 from solver import Board
 import os
 def main():
+    '''
+    Inputs: Sudoku puzzle text files
+    Outputs: Solved sudoku puzzle
+    Function: Solve a sudoku puzzle
+    '''
     #Go through each file in the directory 
     for file in sorted(os.listdir(".")):
-        if file.endswith(".txt"):
+        if file.endswith(".txt") and 'puzzle' in file:
             #if the file ends with .txt, solve the sudoku
 
             #Get an empty list to store the sudoku

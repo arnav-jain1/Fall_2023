@@ -11,6 +11,11 @@ class Board:
         self.box_size = 3
     
     def solve(self):
+        '''
+        Inputs: None
+        Outputs: Solved board if it is solvable
+        Function: Calls the recursive function to solve the board and print it if it is solvable
+        '''
         #Calls the recursive function to solve the board and print it if it is solvable
         
         if self._recursive_solve():
@@ -19,15 +24,21 @@ class Board:
             print("This board is not solvable")
     
     def _recursive_solve(self):
-        #Recursive function to solve the board no inputs, returns True if the board is solved, False if it is not
+        '''
+        Inputs: Sudoku board
+        Outputs: True if the board is solved, False if it is not
+        Function: Recursive function to solve the board no inputs, returns True if the board is solved, False if it is not
+        '''
 
 
-        #Base case: if there are no empty squares, the board is solved
+        #Base case: if there are no empty squares, the board is solved, return True
         empty_square = self.search_empty()
         if empty_square == None:
             return True
         
         #Recursive case: try all numbers in the empty square
+
+        #Get the coordinates of the empty square
         row, col = empty_square
         for num in range(1, 10):
             #Check if the number is valid
@@ -45,7 +56,11 @@ class Board:
     
 
     def search_empty(self):
-        #Searches for an empty square and returns the coordinates of the first empty square it finds
+        '''
+        Inputs: Sudoku board
+        Outputs: Coordinates of the first empty square it finds
+        Function: Searches for an empty square and returns the coords
+        '''
 
         for row in range(self.size):
             for col in range(self.size):
@@ -77,10 +92,9 @@ class Board:
                 return False
             if self.board[i][col] == num:
                 return False
+            #Check if the number already exists in the box if so return False
         
 
-        #Check if the number already exists in the box if so return False
-        
         #Find the sub-box the square is in by dividing the row and column by the box size (int div)
         box_row = row // self.box_size
 
@@ -99,6 +113,11 @@ class Board:
         return True
     
     def print_board(self):
+        '''
+        Inputs: Sudoku board
+        Outputs: Printed board
+        Function: Prints the board
+        '''
         for elem in self.board:
             #Print each row of the board
             print(elem)

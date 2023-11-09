@@ -11,6 +11,7 @@ MariaDB [348f23_a982j684]> SELECT StdFirstName, StdLastName, Stdcity, StdGPA FRO
 
 
 
+
 Question 2) 
 
 MariaDB [348f23_a982j684]> SELECT StdFirstName, StdLastName, StdGPA FROM Student ORDER BY StdGPA DESC; 
@@ -33,20 +34,19 @@ MariaDB [348f23_a982j684]> SELECT StdFirstName, StdLastName, StdGPA FROM Student
 
 
 
+
+
 Question 3) 
 
-MariaDB [348f23_a982j684]> SELECT * FROM Offering WHERE CourseNo REGEXP 'IS4.*';
-+---------+----------+---------+---------+-------------+----------+-------------+---------+
-| OfferNo | CourseNo | OffTerm | OffYear | OffLocation | OffTime  | FacNo       | OffDays |
-+---------+----------+---------+---------+-------------+----------+-------------+---------+
-|    2222 | IS460    | SUMMER  |    2019 | BLM412      | 13:30:00 | NULL        | TTH     |
-|    5678 | IS480    | WINTER  |    2020 | BLM302      | 10:30:00 | 987-65-4321 | MW      |
-|    5679 | IS480    | SPRING  |    2020 | BLM412      | 15:30:00 | 876-54-3210 | TTH     |
-|    9876 | IS460    | SPRING  |    2020 | BLM307      | 13:30:00 | 654-32-1098 | TTH     |
-+---------+----------+---------+---------+-------------+----------+-------------+---------+
-4 rows in set (0.001 sec)
-
-
+MariaDB [348f23_a982j684]> SELECT * FROM course WHERE CourseNo REGEXP 'IS4.*';
++----------+-------------------------------------+----------+
+| CourseNo | CrsDesc                             | CrsUnits |
++----------+-------------------------------------+----------+
+| IS460    | SYSTEMS ANALYSIS                    |        4 |
+| IS470    | BUSINESS DATA COMMUNICATIONS        |        4 |
+| IS480    | FUNDAMENTALS OF DATABASE MANAGEMENT |        4 |
++----------+-------------------------------------+----------+
+3 rows in set (0.001 sec)
 
 
 
@@ -65,16 +65,17 @@ MariaDB [348f23_a982j684]> SELECT OfferNo, CourseNo FROM Offering WHERE FacNo IS
 
 Question 5) 
 
-MariaDB [348f23_a982j684]> SELECT o.OfferNo, o.CourseNo, f.FacFirstName, f.FacLastName FROM Offering o INNER JOIN Faculty f ON o.FacNo = f.FacNo WHERE OffTerm ='SPRING';
+
+MariaDB [348f23_a982j684]> SELECT o.OfferNo, o.CourseNo, f.FacFirstName, f.FacLastName FROM Offering o INNER JOIN Faculty f ON o.FacNo = f.FacNo WHERE OffTerm ='SPRING' AND f.FacRank = 'ASST';
 +---------+----------+--------------+-------------+
 | OfferNo | CourseNo | FacFirstName | FacLastName |
 +---------+----------+--------------+-------------+
 |    3333 | IS320    | LEONARD      | VINCE       |
 |    5679 | IS480    | CRISTOPHER   | COLAN       |
-|    7777 | FIN480   | NICKI        | MACON       |
-|    9876 | IS460    | LEONARD      | FIBON       |
 +---------+----------+--------------+-------------+
-4 rows in set (0.001 sec)
+2 rows in set (0.001 sec)
+
+
 
 
 
@@ -97,14 +98,14 @@ MariaDB [348f23_a982j684]> SELECT DISTINCT FacNo FROM Offering;
 
 
 Question 7) 
-MariaDB [348f23_a982j684]> SELECT StdFirstName AS Name FROM Student WHERE StdCity='BOTHELL' UNION SELECT FacFirstName FROM Faculty WHERE FacCity='BOTHELL';
-+----------+
-| Name     |
-+----------+
-| BOB      |
-| WILLIAM  |
-| VICTORIA |
-+----------+
+MariaDB [348f23_a982j684]> SELECT StdFirstName AS Name FROM Student WHERE StdCity='BOTHELL' UNION SELECT FacFirstName FROM Faculty WHERE FacCity='BELLEVUE';
++---------+
+| Name    |
++---------+
+| BOB     |
+| WILLIAM |
+| NICKI   |
++---------+
 3 rows in set (0.001 sec)
 
 Question 8) 

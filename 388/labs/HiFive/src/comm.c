@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "eecs388_lib.h"
 
@@ -16,6 +17,16 @@ int read_from_pi(int devid)
     // Task-2: 
     //after performing Task-2 at dnn.py code, modify this part to read angle values from Raspberry Pi
     // You code goes here (Use Lab 09 for reference)
+    
+    char line[10];
+    static int read = 0;
+    if (ser_isready(devid)) {
+        ser_readline(devid, sizeof(line), line);
+        read = atoi(line);
+    
+        
+    }
+    return read;
 
 }
 
@@ -24,12 +35,15 @@ void auto_brake(int devid)
     // Task-1: 
     // Your code here (Use Lab 02 - Lab 04 for reference)
     // You must use the directions given in the project document to recieve full credit
-    static int counter = 0;
-    if ('Y' == ser_read(0) && 'Y' == ser_read(0)) {
-        int total_dist = (ser_read(0) | (ser_read(0) << 8)); // read the lower 8 bits and then read again to get the higher 8 bits. Then do an 8 bit shift left for the higher bit and Then or the 2 vars together to get the total distance
 
-        printf("Distance: %d\n", total_dist); // print the distance  to the console
+    //Counter to flash every 10 cycles (one cycle is 10ms so 10 cycles is 100ms)
+    static int counter = 0;
+    if ('Y' == ser_read(devid) && 'Y' == ser_read(devid)) {
+        int total_dist = (ser_read(devid) | (ser_read(devid) << 8)); // read the lower 8 bits and then read again to get the higher 8 bits. Then do an 8 bit shift left for the higher bit and Then or the 2 vars together to get the total distance
+
+        // printf("Distance: %d\n", total_dist); // print the distance  to the console
         if (total_dist > 200) {
+            
             gpio_write(RED_LED, OFF);
             gpio_write(GREEN_LED, ON);
         } else if (total_dist > 100) {
@@ -90,8 +104,8 @@ int main()
     while (1) {
 
         auto_brake(lidar_to_hifive); // measuring distance using lidar and braking
-        // int angle = read_from_pi(pi_to_hifive); //getting turn direction from pi
-        // printf("\nangle=%d", angle) 
+        int angle = read_from_pi(pi_to_hifive); //getting turn direction from pi
+        printf("angle: %d \n", angle);
         // int gpio = PIN_19; 
         // for (int i = 0; i < 10; i++){
         //     // Here, we set the angle to 180 if the prediction from the DNN is a positive angle
