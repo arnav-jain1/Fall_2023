@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EECS 348 Lab 7 Practice 4</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 50%;
+            }
+            td {
+                border: 1px solid black;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+    </head>    
+<body>
+
+<h1>EECS 348 Lab 7 Practice 4</h1>
+<div>
+<h2>
+    Multiplication table creator
+</h2>
+</div>
+<form method="POST" action=""><label>How large do you want the table to be? <input type="number" name="size" placeholder="Enter Dimension"></label><br>
+
+<input type="submit" value="Create Table">
+</form>
+
+
+<?php
+
+if (isset($_POST['size'])) { 
+
+$n = intval($_POST['size']);
+$n = $n + 1;
+echo "<table border='1'>";
+for ($i = 0; $i < $n; $i++) {
+    echo "<tr>";
+    for ($j = 0; $j < $n; $j++) {
+        if ($i == 0 && $j == 0) {
+            echo "<td></td>";
+        }
+        else if ($i == 0) {
+            echo "<td>" . $j . "</td>";
+        }
+        else if ($j == 0) {
+            echo "<td>" . $i . "</td>";
+        }
+        else {
+            echo "<td>" . ($i*$j) . "</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+}
+
+?>
+
+</body>
+</html> 
+

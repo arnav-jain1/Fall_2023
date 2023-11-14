@@ -1,0 +1,38 @@
+Relation 1: 				 {(4, 4), (1, 1), (3, 3), (2, 2)}
+Relation 1 is reflexive: 		 True
+Reflexive closure of relation 1: 	 {(4, 4), (1, 1), (3, 3), (2, 2)}
+Relation 2: 				 {('c', 'c'), ('a', 'a')}
+Relation 2 is reflexive: 		 False
+Reflexive closure of relation 2: 	 {('d', 'd'), ('c', 'c'), ('a', 'a'), ('b', 'b')}
+
+
+Relation 3: 				 {(4, 4), (1, 2), (3, 3), (2, 1)}
+Relation 3 is symmetric: 		 True
+Symmetric closure of relation 3: 	 {(4, 4), (1, 2), (3, 3), (2, 1)}
+Relation 4: 				 {(1, 2), (3, 3)}
+Relation 4 is symmetric: 		 False
+Symmetric closure of relation 4: 	 {(1, 2), (2, 1), (3, 3)}
+
+
+Relation 5: 				 {('d', 'd'), ('b', 'c'), ('a', 'b'), ('a', 'c')}
+Relation 5 is transitive: 		 True
+Transitive closure of relation 5: 	 {('d', 'd'), ('b', 'c'), ('a', 'b'), ('a', 'c')}
+Relation 6: 				 {(2, 2), (3, 1), (1, 1), (1, 3), (3, 2)}
+Relation 6 is transitive: 		 False
+Transitive closure of relation 6: 	 {(3, 3), (1, 2), (2, 2), (3, 1), (1, 1), (1, 3), (3, 2)}
+
+
+Relation 7: 				 {(2, 3), (1, 1), (2, 2)}
+Relation 7 is an equivalence relation:   False
+Reasons: 				 ['Not reflexive', 'Not symmetric']
+Relation 8: 				 {('b', 'c'), ('c', 'b'), ('b', 'b'), ('c', 'c'), ('a', 'a')}
+Relation 8 is an equivalence relation:   True
+Reasons: 				 ['Reflexive, symmetric, and transitive']
+
+
+Relation 9: 				 {(4, 4), (1, 2), (3, 3), (2, 2), (1, 1), (4, 1), (4, 2)}
+Relation 9 is a poset: 			 True
+Reasons: 				 ['Reflexive, antisymmetric, and transitive']
+Relation 10: 				 {(0, 1), (1, 2), (0, 0), (1, 1), (0, 3), (2, 0), (0, 2), (3, 3), (2, 2), (1, 0), (1, 3)}
+Relation 10 is a poset: 		 False
+Reasons: 				 ['Not antisymmetric', 'Not transitive']
