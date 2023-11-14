@@ -141,5 +141,5 @@ def is_eqiv(relation, SET):
 # print("\n")
 # q3_transitive()
 # print("\n")
-# q4_equiv()
+q4_equiv()
 
