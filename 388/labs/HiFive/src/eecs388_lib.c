@@ -58,7 +58,9 @@ void delay_usec(int usec)
 {
   uint64_t tend; 
   tend = get_cycles() + (uint64_t)usec * 32768 / 1000000;
-  while (get_cycles() < tend) {}; 
+  while (get_cycles() < tend) {
+    // ser_read(0);
+  }; 
 }
 
 void (*interrupt_handler[MAX_INTERRUPTS])();

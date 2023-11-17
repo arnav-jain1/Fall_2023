@@ -24,9 +24,6 @@ def main():
             #Get an empty list to store the sudoku
             sudoku = []
             
-            #Print the puzzle being solved
-            print("Solving " + file)
-            
             #Open the file and read the lines
             with open(file) as f:
                 lines = f.readlines()
@@ -46,8 +43,16 @@ def main():
                 #Add the list to the sudoku list to make a 2d array
                 sudoku.append(board_line)
 
-            #Create a board object and solve the sudoku
+
+            #Create a board object
             solve = Board(sudoku)
+            
+            #Print the original sudoku
+            print("Original " + file)
+            solve.print_board()
+            print("Solved " + file)
+
+            #Solve the sudoku
             solve.solve()
             #Print a new line to separate the puzzles
             print()
