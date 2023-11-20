@@ -83,50 +83,70 @@ def indistOindistB(num1, num2):
     return P(num1, num2)
 
 def q1():
+    # Example 8 and Question 1b from the assignment
     ex8 = "Example 8: How many ways are there to deal 5-card poker hands from a 52 card deck to each of the four players"
+    #Total variable to get the cumulative product
     total = 1
     for num in range(0, 4):
+        #Subtract 5 from 52 each time because 5 cards are being dealt each time (4 times because there are 4 players)
         total *= distOdistB(52-5*num, 5)
+    #Print the answer
     print(ex8)
     print(total)
 
+    #Question 1b
     q1b = "Question 1b: A professor packs her collection of 40 issues of a mathematics journal in four boxes with 10 issues per box. How many ways can she distribute the journals if each box is numbered, so that they are distinguishable?"
     print(q1b)
     total = 1
+    #Subtract 10 from 40 each time because 10 journals are being packed each time (4 times because there are 4 boxes)
     for num in range(0, 4):
         total *= distOdistB(40-10*num, 10)
+    #Print the answer
     print(total) 
 
 def q2():
+    # Example 9 and Question 2b from the assignment
     ex9 ="Example 9: How many ways are there to place 10 indistinguishable balls into 8 distinguishable bins?"
+    #Print the example and the answer using the indistinguishable objects into distinguishable bins function using 10 and 8 as the parameters
     answer = indisOdistB(10, 8)
     print(ex9)
     print(answer)
 
+    #Question 2b
     q2b = "Question 2b: How many ways are there to distribute 12 indistinguishable balls into six distinguishable bins?"
     print(q2b)
+    #Print the answer using the indistinguishable objects into distinguishable bins function with 12 and 6 as the parameters
     print(indisOdistB(12, 6))
 
 def q3():
+    # Example 10 and Question 3b from the assignment
     ex10 = "Example 10: How many ways can Anna, Billy, Caitlin, and Danny be placed into three indistinguishable homerooms?"
     print(ex10)
+    #Print the answer using the distinguishable objects into indistinguishable bins function with 4 and 3 as the parameters
     print(distOindisB(4,3))
 
+    #Question 3b
     q3b = "Question 3b: How many ways are there to put five temporary employees into four identical offices?"
     print(q3b)
+    #Print the answer using the distinguishable objects into indistinguishable bins function with 5 and 4 as the parameters
     print(distOindisB(5,4))
 
 def q4():
+    # Example 11 and Question 4b from the assignment
     ex11 = "Example 11: How many ways can you pack six copies of the same book into four identical boxes?"
     print(ex11)
+    #Print the answer using the indistinguishable objects into indistinguishable bins function with 6 and 4 as the parameters
     print(indistOindistB(6,4))
 
+    #Question 4b
     q4b = "Question 4b: How many ways are there to distribute five indistinguishable objects into three indistinguishable boxes?"
     print(q4b)
+    #Print the answer using the indistinguishable objects into indistinguishable bins function with 5 and 3 as the parameters
     print(indistOindistB(5,3))
 
 
 def main():
+    #Call all the functions
     q1()
     print()
     q2()
@@ -136,4 +156,5 @@ def main():
     q4()
 
 if __name__ == "__main__":
+    #Call main
     main()
