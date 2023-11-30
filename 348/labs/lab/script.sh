@@ -13,7 +13,7 @@ echo "$input" | grep -Eo '\b[a-tv-zA-TV-Z]{4,}\b'
 
 # Question 3: In the input string, match three consecutive words, where the middle word begins with "b".
 echo "Question3"
-echo "$input" | grep -Eo '\b.*\b \bb.*\b \b.*\b'
+echo "$input" | grep -Eo '\b\w+\b \bb\w+\b \b\w+\b'
 
 # Question 4: Identify all function declarations (including parameters)
 echo "Question4"
