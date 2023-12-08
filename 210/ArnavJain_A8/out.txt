@@ -1,0 +1,995 @@
+Problem 1:
+Example 1 graph G1 is a Euler circuit: ['e', 'c', 'd', 'e', 'a', 'b', 'e']
+Example 1 graph G2 is not a Euler circuit. The odd vertices are: {'c', 'd', 'a', 'b'}
+Example 1 graph G3 is not a Euler circuit. The odd vertices are: {'a', 'b'}
+Bridge graph is not a Euler circuit. The odd vertices are: {'a', 'd'}
+Problem 1b graph is a Euler circuit: ['c', 'b', 'a', 'd', 'e', 'h', 'g', 'd', 'b', 'e', 'f', 'h', 'i', 'f', 'c']
+
+Problem 2:
+Example 5 graph G1 does not satisfy Dirac's condition and may be a Hamilton circuit
+Example 5 graph G2 does not satisfy Dirac's condition and may be a Hamilton circuit
+Example 5 graph G3 does not satisfy Dirac's condition and may be a Hamilton circuit
+Test case 2 graph does not satisfy Dirac's condition and may be a Hamilton circuit
+
+Problem 3:
+Example 5 graph G1 satisfies Ore's condition and is a Hamilton circuit
+Example 5 graph G2 does not satisfy Ore's condition and may be a Hamilton circuit
+Example 5 graph G3 does not satisfy Ore's condition and may be a Hamilton circuit
+Test case 2 graph does not satisfy Ore's condition and may be a Hamilton circuit
+
+Problem 4:
+Question 4a:
+Piles: 2, 2, 1, Player: Max, Value: 1
+	Piles: 1, 2, 1, Player: Min, Value: -1
+		Piles: 0, 2, 1, Player: Max, Value: 1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+		Piles: 1, 1, 1, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 0, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 2, 0, Player: Max, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+	Piles: 0, 2, 1, Player: Min, Value: -1
+		Piles: 0, 1, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 0, 0, 1, Player: Max, Value: -1
+		Piles: 0, 2, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+	Piles: 2, 1, 1, Player: Min, Value: -1
+		Piles: 1, 1, 1, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 0, 1, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 2, 0, 1, Player: Max, Value: 1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 2, 0, 0, Player: Min, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 2, 1, 0, Player: Max, Value: 1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 2, 0, 0, Player: Min, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+	Piles: 2, 0, 1, Player: Min, Value: -1
+		Piles: 1, 0, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 0, 0, 1, Player: Max, Value: -1
+		Piles: 2, 0, 0, Player: Max, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+	Piles: 2, 2, 0, Player: Min, Value: 1
+		Piles: 1, 2, 0, Player: Max, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 0, 2, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 2, 1, 0, Player: Max, Value: 1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 2, 0, 0, Player: Min, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 2, 0, 0, Player: Max, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+
+Question 4b:
+Piles: 1, 2, 3, Player: Max, Value: -1
+	Piles: 0, 2, 3, Player: Min, Value: -1
+		Piles: 0, 1, 3, Player: Max, Value: 1
+			Piles: 0, 0, 3, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 0, 0, 3, Player: Max, Value: 1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+		Piles: 0, 2, 2, Player: Max, Value: -1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 2, 1, Player: Min, Value: -1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 2, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+		Piles: 0, 2, 1, Player: Max, Value: 1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+		Piles: 0, 2, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+	Piles: 1, 1, 3, Player: Min, Value: -1
+		Piles: 0, 1, 3, Player: Max, Value: 1
+			Piles: 0, 0, 3, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 1, 0, 3, Player: Max, Value: 1
+			Piles: 0, 0, 3, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 1, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 1, 2, Player: Max, Value: 1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 1, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 1, 1, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 1, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+	Piles: 1, 0, 3, Player: Min, Value: -1
+		Piles: 0, 0, 3, Player: Max, Value: 1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+		Piles: 1, 0, 2, Player: Max, Value: 1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 0, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 0, 0, Player: Max, Value: -1
+	Piles: 1, 2, 2, Player: Min, Value: -1
+		Piles: 0, 2, 2, Player: Max, Value: -1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 0, 2, 1, Player: Min, Value: -1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 2, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+		Piles: 1, 1, 2, Player: Max, Value: 1
+			Piles: 0, 1, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 2, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 1, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 0, 2, Player: Max, Value: 1
+			Piles: 0, 0, 2, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 2, 1, Player: Max, Value: 1
+			Piles: 0, 2, 1, Player: Min, Value: -1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 2, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 1, 1, 1, Player: Min, Value: 1
+				Piles: 0, 1, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 1, 0, 1, Player: Max, Value: 1
+					Piles: 0, 0, 1, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 1, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 2, 0, Player: Min, Value: -1
+				Piles: 0, 2, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+				Piles: 1, 1, 0, Player: Max, Value: 1
+					Piles: 0, 1, 0, Player: Min, Value: 1
+					Piles: 1, 0, 0, Player: Min, Value: 1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 2, 0, Player: Max, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+	Piles: 1, 2, 1, Player: Min, Value: -1
+		Piles: 0, 2, 1, Player: Max, Value: 1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+		Piles: 1, 1, 1, Player: Max, Value: -1
+			Piles: 0, 1, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 0, 1, Player: Min, Value: -1
+				Piles: 0, 0, 1, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+		Piles: 1, 0, 1, Player: Max, Value: 1
+			Piles: 0, 0, 1, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 2, 0, Player: Max, Value: 1
+			Piles: 0, 2, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+			Piles: 1, 1, 0, Player: Min, Value: -1
+				Piles: 0, 1, 0, Player: Max, Value: -1
+				Piles: 1, 0, 0, Player: Max, Value: -1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+	Piles: 1, 2, 0, Player: Min, Value: -1
+		Piles: 0, 2, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+		Piles: 1, 1, 0, Player: Max, Value: 1
+			Piles: 0, 1, 0, Player: Min, Value: 1
+			Piles: 1, 0, 0, Player: Min, Value: 1
+		Piles: 1, 0, 0, Player: Max, Value: -1
+
+Question 4c:
+Start: 2, 2, 1
+Player B's turn:  0, 2, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  0, 2, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  0, 2, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  0, 2, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 1, 1
+Player A's turn:  0, 0, 1
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  0, 2, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  1, 2, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 1, 1
+Player A's turn:  0, 1, 1
+Player B's turn:  0, 1, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 0, 1
+Player A's turn:  1, 0, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 0, 0
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  2, 2, 0
+Player A's turn:  1, 2, 0
+Player B's turn:  1, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 0, 0
+Player A's turn:  1, 0, 0
+B is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  2, 1, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Start: 2, 2, 1
+Player B's turn:  1, 2, 1
+Player A's turn:  0, 2, 1
+Player B's turn:  0, 0, 1
+A is the winner
+
+Start: 2, 2, 1
+Player A's turn:  2, 2, 0
+Player B's turn:  0, 2, 0
+Player A's turn:  0, 1, 0
+B is the winner
+
+Player A won 26 times, Player B won 74 times.
