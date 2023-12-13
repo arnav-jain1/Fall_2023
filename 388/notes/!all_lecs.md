@@ -58,7 +58,7 @@ Embedded systems mostly use C because allows memory management, optimizations, e
 
 ## Data types
     1. integer: int, char
-       - Int is 16 bits or 2 bytes
+       - Int is 32 bits or 4 bytes
        - Char is 8 bits or 1 byte
     2. Floating point: float, double
     3. Void: FUnction return type and universal pointer types
@@ -118,6 +118,7 @@ You pass functions through using pointers
   * Instruction register: Current instruction being executed
   * Program counter: Address of next few instruction to be executed
 
+![Alt text](image-43.png)
 
 
 ## Von Neumann computer model
@@ -132,6 +133,9 @@ You pass functions through using pointers
 
 ### Memory:
     - Contains bits that stores instructions and Data
+      - Instruction: Smallest piece of work carried out by computer
+        - The instruction is either completed or not completed
+        - Can't do a part of an instruction
     - Each location has address (memory location) and content (bits stored at ____ memory address)
         - Address space: The amount of memory you can save (2^n)
         - Addressibility: # of bits stored at each address (usually 8 bits/1 byte)
@@ -159,7 +163,7 @@ You pass functions through using pointers
 
 
 ## Processing Unit aka CPU
-Word Length: Length of instruction (16 for LC-3 and 64 for x84) \
+Word Length: Length of instruction in bits (16 for LC-3 and 64 for x84) \
 Arithmetic and Logic Unit (ALU)
 - Math and logic functions
 - Word length, 64 or 32 bit
@@ -182,6 +186,7 @@ Registers
 - Program Counter (PC) and Instruction Register (IR)
 - IR: Current instruction being executed on the CPU
 - PC: Address of next instruction
+  - Also called *Instruction pointer* by Intel because it is a pointer to the next instruction
 
 ## Control unit
 Reads address from memory from address stored in PC \
@@ -216,12 +221,12 @@ Address (or destination register) = PC (Program Counter) + sign extended bits [8
 addressing in relation to the PC (+- 256)
 Only works close to PC
 ## Instruction processing
-    1. Read instruction from memory into the register (FETCH)
-    2. DECODE the instruction
-    3. Evaluate address (optional)
-    4. FETCH OPERANDS from register file or memory
-    5. EXECUTE OPERANDS in ALU
-    6. STORE RESULTS into register file or memory
+    1. FETCH: Read instruction from memory into the register abd Increment PC
+    2. DECODE: Decode the instruction type
+    3. Evaluate address: Generate Memory address for accessing memory (optional)
+    4. FETCH OPERANDS: Read operands from register file or memory
+    5. EXECUTE: execute operation in ALU
+    6. STORE: Write results into register file or memory
 ![Alt text](image-26.png)
 ## FETCH
     Obtain next instruction from memory into IR 
@@ -238,7 +243,7 @@ Only works close to PC
 
 ## Evaluate Address
     Only for memory address instructions like LOAD
-    For LD, extends bits and adds to PC
+    For LD, extends bits and adds to PC to determine what address is needed
 
 ## FETCH OPERANDS
     Get source operands to process instruction
@@ -246,11 +251,13 @@ Only works close to PC
     Ex: LD, Load address to MAR then interrogate memory
 
 ## EXECUTE
-    Does the instruction
+    Does the instruction (not needed for LD)
+    Also changes condition codes
 
 ## STORE RESULTS
     Result written to destination
     For add, updates reg file
+    Not always needed
 
 ## Changing seq of execution
 Control instuction: Change seq of instruction execution like branches
@@ -492,7 +499,7 @@ JMP R1 \
 RET \
 Jump to address stored in register 1, returns to whatever is stored in R7 \
 JMP does not store to register 7, JSR\JSRR do \
-*JSRR jumps to an address stored in register JSR jumps to a label*
+*JSRR jumps to an address stored in register JSR jumps to 11 bits offset of PC*
 
 **JMP** Jump \
 Ret: implicitly uses R7 so don't change R7 \
@@ -808,19 +815,21 @@ Parallel uses multiple lines that all simultaneously send info
     
 ## Transfer types
 Simplex:  1 to 1
-Half duplex: 2 to 2 through one lane
-Full duplex: 2 to 2 through 2 seperate lanes
+Half duplex: 2 to 2 through one lane, can send or recieve but not at same time
+Full duplex: 2 to 2 through 2 seperate lanes, can do both at same time
 
 ## Synchronous vs Asych
 * Synch:
     * Common shared clock
     * High throughput
     * Low scalibility
+    * Block of bites at a time
 
 * Asynch: 
     * No shared clock
     * Asynch start/stop
     * Self-clocked, based on agreement between transmitter and receiver 
+    * 1 bite at a time
 
 ## Serial communication standard RS-232
 * Asynch because no clock signal
@@ -830,7 +839,7 @@ Full duplex: 2 to 2 through 2 seperate lanes
 * 1 represented by -3 to -15V
 * 0 represented by +3 to +15V
 
-Essentially, it is a stream of bits starting from a start bit all the way to 2 end bits with an optional parity bit (also not sending anything is just 1s)
+Essentially, it is a stream of bits starting from a start bit (always 0) all the way to 2 end bits with an optional parity bit (also not sending anything is just 1s)
 * Ex:
     * 0 101110100 1 11
     * The first bit is a start bit 
@@ -975,12 +984,12 @@ If voltage input is less, the Voltage Reference gets lower too and so does the s
 
 
 ### Timing
-    CS = Active low signal
+    CS = Active low signal (Master to slave)
     When it is low, device is ready to start accepting communication
-    WR = Write
+    WR = Write (Master to slave)
     Start conversation (high to low)
     D0-D7 The data lines where data comes from
-    INTR = Interrupt
+    INTR = Interrupt (slave to master)
     High to Low says communication completed and ready to read data
     RD = Read
     Telling to read the data (high to low is reading data)
@@ -1013,12 +1022,13 @@ Speed controlled by voltage
 In this case the T'/T is the Duty cycle
 
 ## DAC vs PWM
-DAC used when sending information (Generating sound)
+DAC used when sending information (Generating sound), when you want smooth and continous information \
 PWM used for controlling power or speed (LEDs for speed, moving motor)
 
 
 ## Servo motor
 - Electrical device to control linear/angular position/velocity precisely
+- Gets positional feedback
 - Angle = f(PWM duty cycle)
     - ex: on for 1ms is 0 degree, on for 2 is 180
     - Like the one used in lab
@@ -1344,3 +1354,9 @@ If the next iteration is the same as the previous then you are done
 
 **NOT SCHEDULABLE** when response time is more than the period \
 **SCHEDULABLE** when response time is the same as the response time for the previous iteration and it is less than the period
+
+
+
+Questions:
+BLKW
+LABELS
