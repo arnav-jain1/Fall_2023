@@ -1018,7 +1018,7 @@ Speed controlled by voltage
 - Speed of motor directly proportional to supply voltage
 - Control power delivery by turning power on and off super fast
 - Duty cycle (portion of on) Time on/Time off * 100%
-![Alt text](image-36.png)
+![Alt text](image-36.png) \
 In this case the T'/T is the Duty cycle
 
 ## DAC vs PWM
