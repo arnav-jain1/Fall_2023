@@ -957,7 +957,7 @@ Reliability
 ## Digital to Analog Conversion
 8 bit input, V(A1/2 + A2/4... A8/256) \
 Where the An is 1 if the input is 1 \
-GPIO 0 is ALWAYS LSB
+> __***GPIO 0 is ALWAYS LSB***__
 ![Alt text](image-18.png)
 
 
